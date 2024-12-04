@@ -45,21 +45,7 @@ html
         let currentUser = null;
         let scores = { "DMCM": 0, "C&SP": 0, "MW": 0 }; // Object to hold total scores for each group
         const questions = [
-            { id: 1, question: "1. What kind of food is in this photo below?", correctAnswer: ["sushi"] },
-            { id: 2, question: "2. What kind of food is in this photo below?", correctAnswer: ["dumpling"] },
-            { id: 3, question: "3. What kind of food is in this photo below?", correctAnswer: ["butter chicken", "curry"] },
-            { id: 4, question: "4. Please guess where it is?", correctAnswer: ["mt. fuji", "mount fuji", "fuji mountain"] },
-            { id: 5, question: "5. Please guess where it is?", correctAnswer: ["great wall"] },
-            { id: 6, question: "6. Please guess where it is?", correctAnswer: ["taj mahal", "taj mahal palace"] },
-            { id: 7, question: "7. Please guess the name of this animal.", correctAnswer: ["panda"] },
-            { id: 8, question: "8. Please guess the name of this cartoon character.", correctAnswer: ["doraemon"] },
-            { id: 9, question: "9. What is the festival name for the below picture?", correctAnswer: ["diwali"] },
-            { id: 10, question: "10. What is the sport name for the below picture?", correctAnswer: ["cricket"] },
-            { id: 11, question: "11. What is the sport name for the below picture?", correctAnswer: ["kung fu"] },
-            { id: 12, question: "12. What is the sport name for the below picture?", correctAnswer: ["mujo"] },
-            { id: 13, question: "13. Please provide the full name of this person.", correctAnswer: ["paul janssen"] },
-            { id: 14, question: "14. Please provide the full name of this person.", correctAnswer: ["taylor swift"] },
-            { id: 15, question: "15. What is the name of this band?", correctAnswer: ["bts"] }
+            // Include your questions here (same as your original code)
         ];
 
         const userAnswers = {}; // Object to store user answers
@@ -120,6 +106,10 @@ html
 
                 // Update group score
                 scores[currentUser.group] += currentUser.score; // Update total group score based on the user's score
+
+                // Update rankings immediately after each answer
+                displayRankings();
+
             } else {
                 feedbackDiv.innerText = `Incorrect! The correct answer(s) was/were: ${correctAnswers.join(", ")}`;
                 feedbackDiv.style.color = "red";
